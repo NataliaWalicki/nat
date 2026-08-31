@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zprávy - Red County News</title>
+    <style>
+        :root {
+            --primary: #c0392b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --text: #333333;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Navigace a tlačítka */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 10px 18px;
+            background-color: var(--dark);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Přehled článků (Karta / Grid) */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .news-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-card-date {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .news-card-title {
+            font-size: 1.25em;
+            margin: 10px 0;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        /* Formatovaní detailu článku */
+        .article-view {
+            display: none;
+        }
+
+        .article-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .article-category {
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+        }
+
+        .article-title {
+            font-size: 2.2em;
+            color: var(--dark);
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .article-perex {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .article-body h2 {
+            font-size: 1.5em;
+            color: var(--dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        .article-body p {
+            margin-bottom: 18px;
+        }
+
+        .article-body blockquote {
+            background: var(--light);
+            border-left: 4px solid var(--dark);
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-style: italic;
+        }
+
+        .article-image {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-caption {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PŘEHLED ZPRÁV (SEZNAM) -->
+    <div id="news-list-page">
+        <h1 style="color: var(--dark); margin-bottom: 30px;">Aktuální Zprávy</h1>
+        
+        <div class="news-grid">
+            <!-- Karta 1 -->
+            <div class="news-card" onclick="openArticle('article-zzs')">
+                <img src="img/nemocnice_montgomery.jpg" alt="Okresní nemocnice Montgomery">
+                <div class="news-card-content">
+                    <span class="news-card-date">13. 3. 2026</span>
+                    <h2 class="news-card-title">ZZS bez vedení. Je to začátek změny, nebo začátek konce?</h2>
+                </div>
+            </div>
+
+            <!-- Karta 2 -->
+            <div class="news-card" onclick="openArticle('article-kongres')">
+                <img src="img/budova_kongresu.jpg" alt="Budova Kongresu San Fierro">
+                <div class="news-card-content">
+                    <span class="news-card-date">11. 5. 2026</span>
+                    <h2 class="news-card-title">Kongres mezi aktivitou a útlumem. Silný začátek roku vystřídalo ticho</h2>
+                </div>
+            </div>
+
+            <!-- Karta 3 -->
+            <div class="news-card" onclick="openArticle('article-zemetreseni')">
+                <img src="img/gant_bridge.jpg" alt="Zřícený most Gant Bridge">
+                <div class="news-card-content">
+                    <span class="news-card-date">16. 5. 2026</span>
+                    <h2 class="news-card-title">Následky večerního zemětřesení: Zřícený most a stop-stav v nemocnici</h2>
+                </div>
+            </div>
+
+            <!-- Karta 4 -->
+            <div class="news-card" onclick="openArticle('article-bayside')">
+                <img src="img/technicke_sluzby.jpg" alt="Technické služby Red County">
+                <div class="news-card-content">
+                    <span class="news-card-date">23. 5. 2026</span>
+                    <h2 class="news-card-title">Technické služby opravily poškozený tunel v Bayside</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ČLÁNEK 1: ZZS -->
+    <div id="article-zzs" class="article-view">
+        <button class="back-btn" onclick="closeArticle()">← Zpět na zprávy</button>
+        <header class="article-header">
+            <span class="article-category">Zdravotnictví / Politika</span>
+            <h1 class="article-title">ZZS bez vedení. Je to začátek změny, nebo začátek konce?</h1>
+            <div class="article-meta">Publikováno: 13. března 2026 | Red County News</div>
+        </header>
+
+        <div class="article-perex">
+            San Andreas se v těchto dnech dívá na další citlivou změnu ve vedení jedné z klíčových organizací. Kongres San Andreas oficiálně odvolal ředitelku Zdravotnické záchranné služby MUDr. Leu Santiago na základě její vlastní rezignace.
+        </div>
+
+        <div class="article-body">
+            <p>Dočasným řízením organizace byl pověřen JUDr. Ing. Carl Schmitz, CSc., který má zajistit běžný chod služby do doby, než bude z výběrového řízení trvajícího do 16. března jmenováno nové vedení.</p>
+
+            <div class="article-image">
+                <img src="img/nemocnice_montgomery.jpg" alt="Budova okresní nemocnice Montgomery">
+                <div class="image-caption">obr. 1: Budova okresní nemocnice Montgomery</div>
+            </div>
+
+            <h2>Oficiální důvod je rezignace. Veřejná debata ale ukazuje hlubší problém</h2>
+            <p>Bývalá ředitelka svůj odchod vysvětlila slovy:</p>
+            <blockquote>
+                „Neodcházím proto, že by se Zdravotnická záchranná služba pod mým vedením rozpadala... ale proto, že jsem po měsících intenzivní práce dospěla k závěru, že současný vnitřní stav instituce je natolik zatuhlý, přebujelý a dlouhodobě zanedbaný, že jej v krátkém čase nelze napravit pouhou vůlí jednoho člověka.“
+            </blockquote>
+            <p>Zdůraznila také, že se jí podařilo otevřít témata dlouhodobě zametaná pod koberec a nastartovat zájem o práci v ZZS.</p>
+
+            <h2>Ostrá kritika od bývalého zástupce</h2>
+            <p>Zcela opačný pohled prezentoval bývalý zástupce ředitelky Richard William Morgan, M.D., MBA, který rezignoval ještě před Santiago:</p>
+            <blockquote>
+                „Důvodem je neudržitelný styl vedení, nečinnost a pasivita paní ředitelky. Instituce je paralyzována vedením, které od svého jmenování dne 2. 12. 2025 neřeší reálné problémy.“
+            </blockquote>
+
+            <h2>Veřejnost i kolegové kritizovali hlavně formu sporu</h2>
+            <p>Významná část reakcí veřejnosti směřovala proti formě celé hádky. Přestřelky na sociálních sítích působily podle komentujících nedůstojně. Do debaty se zapojil i bývalý ředitel MUDr. James Mason, který situaci mírnil a zdůraznil, že zdravotníci v terénu zůstávají plně připraveni pomáhat.</p>
+
+            <div class="article-image">
+                <img src="img/budova_kongresu.jpg" alt="Budova kongresu, San Fierro City Hall">
+                <div class="image-caption">obr. 2: Budova Kongresu, San Fierro City Hall</div>
+            </div>
+
+            <h2>Kongres hledá nové vedení</h2>
+            <p>Situace je nyní v rukou Kongresu, který vyhlásil výběrové řízení. Nový ředitel či ředitelka však nebude přebírat klidnou organizaci, ale sbor zasažený vnitřními spory.</p>
+        </div>
+    </div>
+
+
+    <!-- ČLÁNEK 2: KONGRES -->
+    <div id="article-kongres" class="article-view">
+        <button class="back-btn" onclick="closeArticle()">← Zpět na zprávy</button>
+        <header class="article-header">
+            <span class="article-category">Politika</span>
+            <h1 class="article-title">Kongres mezi aktivitou a útlumem. Silný začátek roku vystřídalo ticho</h1>
+            <div class="article-meta">Publikováno: 11. května 2026 | Red County News</div>
+        </header>
+
+        <div class="article-perex">
+            San Andreas vstoupilo do roku 2026 s překvapivě aktivním Kongresem. Po slabém závěru roku 2025 přinesly první měsíce nového roku výrazné oživení. S příchodem jara však tempo opět začalo slábnout.
+        </div>
+
+        <div class="article-body">
+            <div class="article-image">
+                <img src="img/budova_kongresu.jpg" alt="Budova Kongresu San Fierro">
+                <div class="image-caption">obr. 1: Budova Kongresu, San Fierro, City Hall</div>
+            </div>
+
+            <h2>Leden: Nejsilnější měsíc roku</h2>
+            <p>Do lednového období bylo zvoleno 7 kongresmanů. Předsedkyní se stala Mgr. Elizabeth Hawkins. Leden přinesl rekordních 22 hlasování – schváleny byly např. vyhlášení národních parků, finanční podpora ZZS, zákon o lodní dopravě či novely trestního zákoníku a daní.</p>
+
+            <h2>Únor: Vyšší platy a stabilizace institucí</h2>
+            <p>V únoru převzal předsednictví Claude Carson, J.D. Kongres schválil navýšení maximálních mezd pro státní organizace (Vrchní soud, Policie, ZZS, HZS, DOCAR, Technické služby). Zvolen byl nový předseda Nejvyššího soudu JUDr. Radovan Schneider, který vydal klíčové výkladové stanovisko [N-038] k ústavnímu pořádku.</p>
+
+            <div class="article-image">
+                <img src="img/vrchni_soud.jpg" alt="Budova Vrchního soudu San Andreas">
+                <div class="image-caption">obr. 2: Budova Vrchního soudu San Andreas</div>
+            </div>
+
+            <h2>Březen a duben: Útlum a návrat stagnace?</h2>
+            <p>V březnu fungoval Kongres pouze ve čtyřčlenném složení. Schválil výběrové řízení na ředitelku ZZS (Bc. Anna La Emilio) nebo koncesi pro Hartmann Industries. Duben však přinesl kritiku – místo slibované reformy právního řádu se řešila téměř výhradně administrativa (koncese autoservisů, povolení závodů Rally El Quebrados).</p>
+
+            <div class="article-image">
+                <img src="img/zasedaci_mistnost.jpg" alt="Zasedací místnost Kongresu">
+                <div class="image-caption">obr. 3: Zasedací místnost Kongresu</div>
+            </div>
+
+            <h2>Květen přináší nové tváře i staré otázky</h2>
+            <p>Květnové složení posílilo (Hawkins, Falco, Fright, Lytton, Carson). Otázkou zůstává, zda navrátivší se Elizabeth Hawkins vrátí Kongresu lednové pracovní nasazení, nebo zda převládne volnější rytmus.</p>
+        </div>
+    </div>
+
+
+    <!-- ČLÁNEK 3: ZEMĚTŘESENÍ -->
+    <div id="article-zemetreseni" class="article-view">
+        <button class="back-btn" onclick="closeArticle()">← Zpět na zprávy</button>
+        <header class="article-header">
+            <span class="article-category">Mimořádné události</span>
+            <h1 class="article-title">Následky večerního zemětřesení: San Fierro hlásí zřícený most, nemocnice v Montgomery vyhlásila stop-stav</h1>
+            <div class="article-meta">Publikováno: 16. května 2026 | Red County News</div>
+        </header>
+
+        <div class="article-perex">
+            Krátce po 22. hodině zasáhlo severní San Andreas zemětřesení. Následky otřesů způsobily kritické problémy v dopravě – hlavní tah do San Fierra je neprůjezdný a urgentní příjem v Montgomery musel stopnout příjem pacientů.
+        </div>
+
+        <div class="article-body">
+            <p>Nejvážnější situace panuje na mostě spojujícím Las Venturas se San Fierrem. Podle nadstrážmistryně Sofie Kinské z Policie San Andreas je vozovka zničená a uzavírka nevyhnutelná.</p>
+
+            <div class="article-image">
+                <img src="img/gant_bridge.jpg" alt="Most San Fierro, Gant Bridge">
+                <div class="image-caption">obr. 1: Most San Fierro, Gant Bridge</div>
+            </div>
+
+            <h2>Materiální škody bez obětí na životech</h2>
+            <p>Záchranáři naštěstí neevidují žádné oběti. Vedoucí lékař ZZS dr. James Mason potvrdil: <em>„Pokud se bavíme o osobách zraněných přímo v důsledku katastrofy, zatím nevíme ani o jedné.“</em> V Bayside však došlo k zaplavení přístupového tunelu vodou.</p>
+
+            <h2>Přetížené zdravotnictví</h2>
+            <p>Nemocnice v Montgomery vyhlásila stop-stav kvůli vyčerpaným kapacitám lůžek na urgentním příjmu. Doktor Mason apeloval na veřejnost, aby s méně akutními případy využívala fakultní nemocnice v okolí.</p>
+
+            <div class="article-image">
+                <img src="img/nemocnice_montgomery.jpg" alt="Okresní nemocnice Montgomery">
+                <div class="image-caption">obr. 2: Okresní nemocnice Montgomery</div>
+            </div>
+
+            <p>Vyšetřování nyní zjišťuje, nakolik k destrukci infrastruktury přispěla samotná síla otřesů a nakolik její dlouhodobě zanedbaný technický stav.</p>
+        </div>
+    </div>
+
+
+    <!-- ČLÁNEK 4: BAYSIDE TUNEL -->
+    <div id="article-bayside" class="article-view">
+        <button class="back-btn" onclick="closeArticle()">← Zpět na zprávy</button>
+        <header class="article-header">
+            <span class="article-category">Infrastruktura</span>
+            <h1 class="article-title">Technické služby opravily poškozený tunel v Bayside</h1>
+            <div class="article-meta">Publikováno: 23. května 2026 | Red County News & TS Red County</div>
+        </header>
+
+        <div class="article-perex">
+            Následky nedávného zemětřesení se podepsaly na infrastruktuře. Poškozený tunel v Bayside prošel rozsáhlou rekonstrukcí pod vedením Technických služeb Red County a je připraven k znovuotevření.
+        </div>
+
+        <div class="article-body">
+            <p>Opravy probíhaly ve čtvrtek 21. května v nočních hodinách na žádost Bezpečnostní rady státu (BRS).</p>
+
+            <div class="article-image">
+                <img src="img/technicke_sluzby.jpg" alt="Technické služby Red County, Blueberry">
+                <div class="image-caption">obr. 1: Technické služby Red County, Blueberry</div>
+            </div>
+
+            <h2>Praskliny, poškozené potrubí i sutiny</h2>
+            <p>Pracovníci nejprve odklidili sutiny a zabetonovali praskliny ve stěnách. Nejzávažnějším problémem bylo prasklé potrubí pod tunelem – poškozená část byla vyříznuta, nahrazena novým vedením, zalita betonem a urovnána silničním válcem před položením nového asfaltu.</p>
+
+            <div class="article-image">
+                <img src="img/poskozene_potrubi.jpg" alt="Poškozené potrubí, tunel Bayside">
+                <div class="image-caption">obr. 2: Poškozené potrubí, tunel Bayside</div>
+            </div>
+
+            <h2>Maximální důraz na bezpečnost</h2>
+            <p>Součástí prací bylo čištění okolí, obnova značení a nátěry pruhů. Odpad byl odvezen na skládku v Bayside. Opravené konstrukce by měly odolat dalším středně závažným otřesům.</p>
+
+            <div class="article-image">
+                <img src="img/ts_hotovo.jpg" alt="Technické služby po dokončení práce">
+                <div class="image-caption">obr. 3: Technické služby po dokončení práce</div>
+            </div>
+
+            <div class="article-image">
+                <img src="img/tunel_bayside.jpg" alt="Tunel Bayside">
+                <div class="image-caption">obr. 4: Tunel Bayside</div>
+            </div>
+
+            <h2>Tunel se brzy znovu otevře</h2>
+            <p>Po odstranění bariér a finálním povolení bude tunel v Bayside opět obousměrně průjezdný.</p>
+            <p><em>Za Red County News a Technické služby Red County: Natalia Walicki</em></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openArticle(articleId) {
+        document.getElementById('news-list-page').style.display = 'none';
+        
+        const articles = document.querySelectorAll('.article-view');
+        articles.forEach(article => article.style.display = 'none');
+        
+        document.getElementById(articleId).style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function closeArticle() {
+        const articles = document.querySelectorAll('.article-view');
+        articles.forEach(article => article.style.display = 'none');
+        
+        document.getElementById('news-list-page').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>

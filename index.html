@@ -135,3 +135,33 @@
 
 </body>
 </html>
+<!-- 1. TLAČÍTKA PRO PŘEPÍNÁNÍ -->
+<div style="margin-bottom: 15px;">
+  <button onclick="ukazObsah('obsah1')" style="padding: 8px 16px; cursor: pointer;">Možnost A</button>
+  <button onclick="ukazObsah('obsah2')" style="padding: 8px 16px; cursor: pointer;">Možnost B</button>
+</div>
+
+<!-- 2. BLOKY S OBSAHEM -->
+<!-- První blok (ve výchozím stavu viditelný: display: block) -->
+<div id="obsah1" style="display: block; padding: 15px; border: 1px solid #ccc;">
+  <h3>Obsah A</h3>
+  <p>Toto je první verze textu nebo obsahu.</p>
+</div>
+
+<!-- Druhý blok (ve výchozím stavu skrytý: display: none) -->
+<div id="obsah2" style="display: none; padding: 15px; border: 1px solid #ccc;">
+  <h3>Obsah B</h3>
+  <p>Toto je druhá verze textu nebo obsahu.</p>
+</div>
+
+<!-- 3. JAVASCRIPT, KTERÝ ZAJIŠŤUJE DYNAMICKÉ PŘEPÍNÁNÍ -->
+<script>
+  function ukazObsah(idPrvku) {
+    // Schováme oba bloky
+    document.getElementById('obsah1').style.display = 'none';
+    document.getElementById('obsah2').style.display = 'none';
+
+    // Zobrazíme pouze ten blok, na který uživatel kliknul
+    document.getElementById(idPrvku).style.display = 'block';
+  }
+</script>

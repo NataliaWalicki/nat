@@ -1,167 +1,298 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nat.ic | Oficiální stránky</title>
-    <style>
-        /* Základní nastavení vzhledu (CSS) */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f0f2f5; color: #333; line-height: 1.6; }
-        
-        /* Horní menu */
-        header { background: #1a252f; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        nav a { color: #ecf0f1; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        nav a:hover { color: #3498db; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red County News - Zprávy San Andreas</title>
+  
+  <style>
+    /* Základní stylování stránky */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #1c1e21;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
 
-        /* Hlavní obal pro obsah */
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        
-        /* Jednotlivé sekce */
-        section { background: #ffffff; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); scroll-margin-top: 80px; }
-        h2 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; display: inline-block; }
-        
-        /* Styl pro nejnovější článek */
-        .article-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-        .article-title { font-size: 24px; color: #2c3e50; margin-bottom: 10px; }
-        .article-content { font-size: 16px; }
-        
-        /* Kongres - Karty zákonů */
-        .law-card { border-left: 5px solid #e74c3c; background: #fdfbfb; padding: 20px; margin-bottom: 20px; border-radius: 0 8px 8px 0; }
-        .law-card h3 { color: #c0392b; margin-bottom: 10px; }
-        .law-section { margin-bottom: 10px; }
-        .law-section strong { color: #2c3e50; }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        /* Zprávy */
-        .news-item { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
-        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .news-source { font-size: 12px; color: #7f8c8d; font-weight: bold; text-transform: uppercase; }
-        
-        /* Patička */
-        footer { text-align: center; padding: 20px; background: #1a252f; color: #fff; margin-top: 40px; }
-    </style>
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: #d9534f;
+      font-size: 32px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Navigační menu s tlačítky */
+    .menu {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu button {
+      background-color: #ffffff;
+      border: 2px solid #d9534f;
+      color: #d9534f;
+      padding: 10px 18px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .menu button:hover {
+      background-color: #fdf2f2;
+    }
+
+    .menu button.aktivni {
+      background-color: #d9534f;
+      color: #ffffff;
+    }
+
+    /* Vzhled článků */
+    .clanek {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+    }
+
+    .clanek h2 {
+      margin-top: 0;
+      color: #111;
+      font-size: 26px;
+      border-bottom: 2px solid #f0f2f5;
+      padding-bottom: 10px;
+    }
+
+    .clanek h3 {
+      color: #d9534f;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    .clanek p {
+      margin: 12px 0;
+      text-align: justify;
+    }
+
+    .clanek blockquote {
+      background: #f8f9fa;
+      border-left: 4px solid #d9534f;
+      margin: 15px 0;
+      padding: 10px 15px;
+      font-style: italic;
+    }
+
+    /* Vzhled obrázků */
+    .clanek img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin: 15px 0 5px 0;
+    }
+
+    .img-caption {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
 
+  <div class="container">
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="#hlavni">Hlavní stránka</a></li>
-                <li><a href="#informace">Informace</a></li>
-                <li><a href="#zpravy">Zprávy</a></li>
-                <li><a href="#kongres">Kongres</a></li>
-                <li><a href="#o-mne">O mně</a></li>
-            </ul>
-        </nav>
+      <h1>Red County News</h1>
+      <p>Nezávislé zpravodajství ze státu San Andreas</p>
     </header>
 
-    <div class="container">
-
-        <section id="hlavni">
-            <h2>Nejnovější článek</h2>
-            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=80" alt="Obrázek článku" class="article-image">
-            <h3 class="article-title">Zde napiš nadpis svého nejnovějšího článku</h3>
-            
-            <div class="article-content">
-                <p>Zde můžeš psát text svého článku. Pokud chceš něco <b>zvýraznit tučně</b>, použiješ tyto značky.</p>
-                <p>Můžeš si také hrát s <span style="color: red; font-weight: bold;">barvami</span> nebo si text upravit tak, aby byl <span style="font-size: 20px; color: #3498db;">větší a modrý</span>.</p>
-                <p>Odstavce se dělají tak, že text vložíš mezi značky <code>&lt;p&gt;</code> a <code>&lt;/p&gt;</code>. Díky tomu bude tvůj článek krásně čitelný a oddělený.</p>
-            </div>
-        </section>
-
-        <section id="informace">
-            <h2>Informace o Nat.ic</h2>
-            <p>Vítejte na stránkách <b>Nat.ic</b>. Tento web slouží jako hlavní rozcestník pro moji práci, články a politickou činnost.</p>
-            <p>Najdete zde archiv mých novinářských výstupů, detailní rozbory legislativy z Kongresu a také informace o mé osobě. Cílem této stránky je poskytovat transparentní a přehledné informace pro všechny čtenáře a občany.</p>
-        </section>
-
-        <section id="zpravy">
-            <h2>Zprávy (Red County News)</h2>
-            
-            <div class="news-item">
-                <div class="news-source">Red County News | 31. srpna 2026</div>
-                <h3>Dramatická událost v centru města</h3>
-                <p>Zde vlož krátký úryvek tvé zprávy pro RCN. Popiš, co se dělo, jaká byla situace a případně přidej link na celou zprávu.</p>
-            </div>
-
-            <div class="news-item">
-                <div class="news-source">Red County News | 25. srpna 2026</div>
-                <h3>Rozhovor s guvernérem</h3>
-                <p>Další článek. Strukturu můžeš libovolně kopírovat pod sebe a přidávat tak další a další novinky z redakce.</p>
-            </div>
-        </section>
-
-        <section id="kongres">
-            <h2>Kongres (Zákony a novely)</h2>
-            <p>Přehled mých návrhů, nových zákonů a legislativních změn.</p>
-
-            <div class="law-card">
-                <h3>Návrh zákona o bezpečnosti na silnicích</h3>
-                <div class="law-section">
-                    <strong>Co zákon mění, nařizuje nebo upravuje:</strong><br>
-                    Tento zákon upravuje maximální povolenou rychlost v obytných zónách a nařizuje tvrdší postihy za jízdu pod vlivem omamných látek.
-                </div>
-                <div class="law-section">
-                    <strong>Co to v praxi znamená:</strong><br>
-                    Polici má nyní větší pravomoci při odebírání řidičských průkazů na místě a pro občany to znamená nutnost striktně dodržovat rychlost 30 km/h v určených oblastech.
-                </div>
-            </div>
-
-            <div class="law-card">
-                <h3>Novela zákona o daních z nemovitosti</h3>
-                <div class="law-section">
-                    <strong>Co zákon mění, nařizuje nebo upravuje:</strong><br>
-                    Mění procentuální sazbu zdanění komerčních budov v centru města.
-                </div>
-                <div class="law-section">
-                    <strong>Co to v praxi znamená:</strong><br>
-                    Podnikatelé s velkými kancelářemi zaplatí ročně o 5 % více do státní pokladny, což půjde na opravu infrastruktury.
-                </div>
-            </div>
-        </section>
-
-        <section id="o-mne">
-            <h2>O mně</h2>
-            <p>Jmenuji se Nat a jsem redaktorem pro <b>Red County News</b> a aktivním členem politického dění.</p>
-            <p>Zde se můžeš rozepsat o svém příběhu. Jaké jsou tvé koníčky, tvé pracovní zkušenosti, tvá vize do budoucna a proč děláš to, co děláš. Text si klidně rozděl do více odstavců.</p>
-        </section>
-
+    <!-- MENU TLAČÍTEK -->
+    <div class="menu">
+      <button class="aktivni" onclick="zobrazClanek('clanek1', this)">1. ZZS bez ředitelky</button>
+      <button onclick="zobrazClanek('clanek2', this)">2. Večerní zemětřesení</button>
+      <button onclick="zobrazClanek('clanek3', this)">3. Oprava tunelu Bayside</button>
+      <button onclick="zobrazClanek('clanek4', this)">4. Kongres San Andreas</button>
     </div>
 
-    <footer>
-        &copy; 2026 Nat.ic | Všechna práva vyhrazena.
-    </footer>
+    <!-- ČLÁNEK 1 (VIDITELNÝ) -->
+    <div id="clanek1" class="clanek" style="display: block;">
+      <h2>ZZS bez vedení. Je to začátek změny, nebo začátek konce?</h2>
+      
+      <p>San Andreas se v těchto dnech dívá na další citlivou změnu ve vedení jedné z klíčových organizací. Kongres San Andreas oficiálně odvolal ředitelku Zdravotnické záchranné služby MUDr. Leu Santiago, a to na základě její vlastní rezignace ze dne 9. března 2026. Současně bylo vyhlášeno výběrové řízení na nového ředitele či ředitelku ZZS, které potrvá do 16. března 2026.</p>
+      
+      <p>Dočasným řízením organizace byl pověřen JUDr. Ing. Carl Schmitz, CSc., který má zajistit běžný chod služby do doby, než bude jmenováno nové vedení.</p>
+
+      <img src="nemocnice_montgomery.jpg" alt="Budova okresní nemocnice Montgomery">
+      <div class="img-caption">obr. 1. budova okresní nemocnice Montgomery</div>
+
+      <h3>Oficiální důvod je rezignace. Veřejná debata ale ukazuje hlubší problém</h3>
+      <p>Bývalá ředitelka svůj odchod vysvětlila slovy:</p>
+      <blockquote>„Neodcházím proto, že by se Zdravotnická záchranná služba pod mým vedením rozpadala, jak se vám zde někteří účelově snaží podsouvat, ale proto, že jsem po měsících intenzivní práce dospěla k závěru, že současný vnitřní stav instituce je natolik zatuhlý, přebujelý a dlouhodobě zanedbaný, že jej v krátkém čase nelze napravit pouhou vůlí jednoho člověka.“</blockquote>
+      <p>Ve svém příspěvku zároveň odmítla interpretaci, podle níž by současné problémy vznikly až během jejího působení. Naopak tvrdí, že jde o důsledky dlouhodobě nastaveného systému, který byl léta přehlížen.</p>
+      <p>Za dobu svého působení podle svých slov naopak dokázala znovu nastartovat zájem o práci v ZZS, zvýšit počet přihlášek a otevřít témata, která byla dlouhé měsíce zametána pod koberec.</p>
+
+      <h3>Ostrá kritika od bývalého zástupce</h3>
+      <p>Zcela opačný pohled na situaci veřejně prezentoval bývalý zástupce ředitelky Richard William Morgan, M.D., MBA, který na svou funkci rezignoval ještě před samotným odchodem Santiago:</p>
+      <blockquote>„Důvodem je neudržitelný styl vedení, nečinnost a pasivita paní ředitelky. Instituce, která má být pilířem bezpečnosti našeho státu, je paralyzována vedením, které od svého jmenování dne 2.12.2025 neřeší reálné problémy.“</blockquote>
+      <p>Morgan zpochybnil informace o stabilizaci a upozornil, že velkou část práce táhl pouze omezený počet lidí, zatímco zbytek organizace stagnoval.</p>
+
+      <h3>Veřejnost i kolegové kritizovali hlavně formu sporu</h3>
+      <p>Reakce veřejnosti i lidí z okolí státní správy směřovaly spíše proti formě celé hádky než k samotnému obsahu. Pod příspěvky se objevovala kritika, že veřejné přestřelky mezi bývalým vedením ZZS působí nedůstojně.</p>
+      <p>Do debaty se zapojil i MUDr. James Mason, bývalý ředitel ZZS a snoubenec bývalé ředitelky, který situaci mírnil a zdůraznil, že zdravotníci v nemocnici i v terénu zůstávají připraveni pomáhat pacientům.</p>
+
+      <img src="kongres_san_fierro.jpg" alt="Budova kongresu, San Fierro City Hall">
+      <div class="img-caption">obr. 2. budova kongresu, San Fierro City Hall</div>
+
+      <h3>Kongres hledá nové vedení</h3>
+      <p>Nyní je situace v rukou Kongresu, který vyhlásil výběrové řízení na novou vůdčí osobnost ZZS. Nové vedení nebude přebírat klidnou organizaci, ale sbor, kolem jehož vnitřního fungování probíhá otevřený spor.</p>
+    </div>
+
+    <!-- ČLÁNEK 2 (SKRYTÝ) -->
+    <div id="clanek2" class="clanek" style="display: none;">
+      <h2>Následky večerního zemětřesení: San Fierro hlásí zřícený most, nemocnice v Montgomery vyhlásila stop-stav</h2>
+      
+      <p>Severní část San Andreas se vzpamatovává z večerního zemětřesení. Následky otřesů způsobily kritické problémy v dopravě! Hlavní tah do San Fierra je po zřícení části mostu neprůjezdný a tunel v Bayside zaplavila voda. Situaci komplikují i plné kapacity na urgentním příjmu v Montgomery.</p>
+      
+      <p>Krátce po 22. hodině zasáhlo severní San Andreas zemětřesení, které okamžitě ochromilo klíčovou infrastrukturu v regionu.</p>
+
+      <img src="gant_bridge.jpg" alt="Most San Fierro, Gant Bridge">
+      <div class="img-caption">Most San Fierro, Gant Bridge</div>
+
+      <p>Nejvážnější situace panuje na mostě spojujícím Las Venturas se San Fierrem. <em>„Most je nyní neprůjezdný, situace se řeší a doufáme, že se co nejdřív opraví a zprovozní,“</em> uvedla na místě nadstrážmistryně Sofie Kinská z Police San Andreas.</p>
+
+      <h3>Materiální škody bez obětí na životech</h3>
+      <p>Navzdory hrozivému rozsahu poškození záchranáři zatím neevidují žádné oběti. Vedoucí lékař ZZS, doktor James Mason, potvrdil: <em>„Pokud se bavíme o osobách zraněných přímo v důsledku této živelné katastrofy, tak zatím nevíme ani o jedné.“</em></p>
+      <p>V oblasti Bayside došlo k zaplavení přístupového tunelu z důvodu narušení statiky vlivem zemětřesení.</p>
+
+      <img src="nemocnice_montgomery.jpg" alt="Okresní nemocnice Montgomery">
+      <div class="img-caption">Okresní nemocnice Montgomery</div>
+
+      <h3>Přetížené zdravotnictví</h3>
+      <p>ZZS během večera vydala mimořádné upozornění týkající se kapacit nemocnice v Montgomery. Ta kvůli zvýšenému náporu pacientů zcela zaplnila svůj urgentní příjem a došla jí volná lůžka. Doktor Mason proto apeloval na veřejnost, aby s méně akutními případy využívala okolní fakultní nemocnice.</p>
+    </div>
+
+    <!-- ČLÁNEK 3 (SKRYTÝ) -->
+    <div id="clanek3" class="clanek" style="display: none;">
+      <h2>Technické služby opravily poškozený tunel v Bayside</h2>
+      
+      <p>Následky nedávného zemětřesení se nadále podepisují na infrastruktuře napříč San Andreas. Jedním z nejvíce zasažených míst se stal tunel v Bayside, který musel být poškozením dočasně uzavřen a následně podroben rozsáhlým opravám pod vedením Technických služeb Red County.</p>
+
+      <img src="technicke_sluzby.jpg" alt="Technické služby Red County, Blueberry">
+      <div class="img-caption">obr. 1. Technické služby Red County, Blueberry</div>
+
+      <p>Opravy probíhaly ve čtvrtek 21. května 2026 v nočních hodinách na žádost Bezpečnostní rady státu (BRS).</p>
+
+      <h3>Praskliny, poškozené potrubí i sutiny</h3>
+      <p>Pracovníci technických služeb museli nejprve odstranit rozsáhlé množství sutin a prachu. Během kontroly byly objeveny hluboké praskliny podél stěn, které bylo nutné zabetonovat.</p>
+
+      <img src="poskozene_potrubi.jpg" alt="Poškozené potrubí, tunel Bayside">
+      <div class="img-caption">obr. 2. poškozené potrubí, tunel Bayside</div>
+
+      <p>Jedním z nejzávažnějších problémů bylo prasklé potrubí vedoucí pod tunelem. Vedení muselo být vyříznuto a nahrazeno novým, odolnějším potrubím, zalito betonem a zaasfaltováno.</p>
+
+      <img src="dokoncene_prace.jpg" alt="Technické služby po dokončení práce">
+      <div class="img-caption">obr. 3. Technické služby po dokončení práce</div>
+
+      <h3>Maximální důraz na bezpečnost</h3>
+      <p>Součástí prací bylo číštění okolí, obnova značení a nátěry pruhů. Odpad byl profesionálně zlikvidován na skládce v Bayside. Nové prvky by měly odolat případným dalším zemětřesením.</p>
+
+      <img src="tunel_bayside.jpg" alt="Tunel Bayside">
+      <div class="img-caption">obr. 4. tunel Bayside</div>
+
+      <h3>Tunel se brzy znovu otevře</h3>
+      <p>Po dokončení oprav se nyní čeká už pouze na odstranění bezpečnostních bariér a finální povolení k obnovení provozu.</p>
+      <p><strong>Za Red County News a Technické služby Red County:</strong> Natalia Walicki</p>
+    </div>
+
+    <!-- ČLÁNEK 4 (SKRYTÝ) -->
+    <div id="clanek4" class="clanek" style="display: none;">
+      <h2>Kongres mezi aktivitou a útlumem. Silný začátek roku vystřídalo ticho</h2>
+      
+      <p>San Andreas vstoupilo do roku 2026 s překvapivě aktivním Kongresem. Po slabém závěru roku 2025 přinesly první měsíce nového roku výrazné oživení. S příchodem jara však tempo opět začalo slábnout.</p>
+
+      <img src="kongres_san_fierro.jpg" alt="Budova Kongresu, San Fierro, City Hall">
+      <div class="img-caption">obr. 1. budova Kongresu, San Fierro, City Hall</div>
+
+      <h3>Leden: nejsilnější měsíc roku</h3>
+      <p>Zvoleno bylo sedm kongresmanů. Předsedkyní se stala Mgr. Elizabeth Hawkins, předsedou disciplinárního výboru Claude Carson, J.D. V lednu proběhlo 22 hlasování. Schváleny byly například:</p>
+      <ul>
+        <li>vyhlášení národních parků a chráněných oblastí,</li>
+        <li>finanční podpora Zdravotnické záchranné službě,</li>
+        <li>nový zákon o lodní dopravě a rybaření,</li>
+        <li>novela zákona o daních a trestním zákoníku.</li>
+      </ul>
+
+      <h3>Únor: vyšší platy a stabilizace institucí</h3>
+      <p>Předsednictví převzal Claude Carson. Schváleno bylo navýšení maximálních mezd pro Vrchní soud, Policii, ZZS, Hasiče, DOCAR a Technické služby.</p>
+
+      <img src="vrchni_soud.jpg" alt="Budova Vrchního soudu San Andreas">
+      <div class="img-caption">obr. 2. budova Vrchního soudu San Andreas</div>
+
+      <p>Novým předsedou Nejvyššího soudu se stal JUDr. Radovan Schneider, který vydal klíčové výkladové stanovisko ke změnám ústavního pořádku [N-038].</p>
+
+      <h3>Březen a Duben: útlum a administrativní rutina</h3>
+      <p>V březnu Kongres ve čtyřčlenném složení zvolil do čela ZZS Bc. Annu La Emilio. V dubnu se činnost smrskla převážně na administrativní úkony (koncese pro autoservisy, povolení závodů Rally El Quebrados).</p>
+
+      <img src="zasedaci_mistnost.jpg" alt="Zasedací místnost Kongresu">
+      <div class="img-caption">obr. 3. zasedací místnost Kongresu</div>
+
+      <h3>Květen přináší nové tváře i staré otázky</h3>
+      <p>Do květnového období byli zvoleni Mgr. Elizabeth Hawkins, Giuseppe Falco BSc., Maxine Fright, Victoria Eloise Lytton a Claude Carson, J.D. Následující týdny ukáží, zda se Kongres vrátí k aktivní práci.</p>
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT PRO PŘEPÍNÁNÍ ČLÁNKŮ -->
+  <script>
+    function zobrazClanek(idClanku, tlacitko) {
+      // 1. Schováme všechny články
+      var clanky = document.querySelectorAll('.clanek');
+      clanky.forEach(function(clanek) {
+        clanek.style.display = 'none';
+      });
+
+      // 2. Zobrazíme pouze vybraný článek
+      document.getElementById(idClanku).style.display = 'block';
+
+      // 3. Odebereme třídu 'aktivni' ze všech tlačítek
+      var tlacitka = document.querySelectorAll('.menu button');
+      tlacitka.forEach(function(btn) {
+        btn.classList.remove('aktivni');
+      });
+
+      // 4. Přidáme třídu 'aktivni' na kliknuté tlačítko
+      tlacitko.classList.add('aktivni');
+    }
+  </script>
 
 </body>
 </html>
-<!-- 1. TLAČÍTKA PRO PŘEPÍNÁNÍ -->
-<div style="margin-bottom: 15px;">
-  <button onclick="ukazObsah('obsah1')" style="padding: 8px 16px; cursor: pointer;">Možnost A</button>
-  <button onclick="ukazObsah('obsah2')" style="padding: 8px 16px; cursor: pointer;">Možnost B</button>
-</div>
-
-<!-- 2. BLOKY S OBSAHEM -->
-<!-- První blok (ve výchozím stavu viditelný: display: block) -->
-<div id="obsah1" style="display: block; padding: 15px; border: 1px solid #ccc;">
-  <h3>Obsah A</h3>
-  <p>Toto je první verze textu nebo obsahu.</p>
-</div>
-
-<!-- Druhý blok (ve výchozím stavu skrytý: display: none) -->
-<div id="obsah2" style="display: none; padding: 15px; border: 1px solid #ccc;">
-  <h3>Obsah B</h3>
-  <p>Toto je druhá verze textu nebo obsahu.</p>
-</div>
-
-<!-- 3. JAVASCRIPT, KTERÝ ZAJIŠŤUJE DYNAMICKÉ PŘEPÍNÁNÍ -->
-<script>
-  function ukazObsah(idPrvku) {
-    // Schováme oba bloky
-    document.getElementById('obsah1').style.display = 'none';
-    document.getElementById('obsah2').style.display = 'none';
-
-    // Zobrazíme pouze ten blok, na který uživatel kliknul
-    document.getElementById(idPrvku).style.display = 'block';
-  }
-</script>

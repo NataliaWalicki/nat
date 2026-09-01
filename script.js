@@ -86,8 +86,8 @@ const siteData = {
         "<p style='text-align: right; margin-top: 30px;'><em>Za <strong>Red County News</strong>, Natalia Walicki</em></p>"
       ],
       image: "obr1.jpg"
-    }
-
+   }
+  ],
 
   /* ==========================================================
      KONGRES

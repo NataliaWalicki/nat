@@ -109,7 +109,7 @@ const siteData = {
      Např.: "images/natalia.jpg"
   ========================================================== */
   profileImage:
-    "https://imgur.com/oMIUi7C"
+    "https://imgur.com/a/HPYU88c"
 };
 
 

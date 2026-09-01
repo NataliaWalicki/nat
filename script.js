@@ -53,13 +53,13 @@ const siteData = {
       description: "Kongres San Andreas oficiálně odvolal ředitelku ZZS MUDr. Leu Santiago na základě její rezignace. Co stojí za jejím odchodem a ostrou kritikou z řad bývalého vedení?",
       content: [
         "<!-- ZDE VLOŽ LOGO (nahraď logo.png za název svého souboru) -->",
-        "<div style='text-align: center; margin-bottom: 25px;'><img src='logo.png' alt='Red County News Logo' style='max-width: 200px; height: auto;'></div>",
+        "<div style='text-align: center; margin-bottom: 25px;'><img src='Logo_RCN.png' alt='Red County News Logo' style='max-width: 200px; height: auto;'></div>",
 
         "<p>San Andreas se v těchto dnech dívá na další citlivou změnu ve vedení jedné z klíčových organizací. Kongres San Andreas officially odvolal ředitelku Zdravotnické záchranné služby <strong>MUDr. Leu Santiago</strong>, a to na základě její vlastní rezignace ze dne 9. března 2026. Současně bylo vyhlášeno výběrové řízení na nového ředitele či ředitelku ZZS, které potrvá do 16. března 2026.</p>",
         "<p>Dočasným řízením organizace byl pověřen <strong>JUDr. Ing. Carl Schmitz, CSc.</strong>, který má zajistit běžný chod služby do doby, než bude jmenováno nové vedení.</p>",
         
         "<!-- ZDE VLOŽ OBRÁZEK 1 -->",
-        "<div style='margin: 20px 0; text-align: center;'><img src='obr1.jpg' alt='budova okresní nemocnice Montgomery' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 1. budova okresní nemocnice Montgomery</em></p></div>",
+        "<div style='margin: 20px 0; text-align: center;'><img src='Budova_Nemocnice_Montgomery.png' alt='budova okresní nemocnice Montgomery' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 1. budova okresní nemocnice Montgomery</em></p></div>",
 
         "<h3>Oficiální důvod je rezignace. Veřejná debata ale ukazuje hlubší problém</h3>",
         "<p>Bývalá ředitelka svůj odchod vysvětlila slovy: <em>„Neodcházím proto, že by se Zdravotnická záchranná služba pod mým vedením rozpadala, jak se vám zde někteří účelově snaží podsouvat, ale proto, že jsem po měsících intenzivní práce dospěla k závěru, že současný vnitřní stav instituce je natolik zatuhlý, přebujelý a dlouhodobě zanedbaný, že jej v krátkém čase nelze napravit pouhou vůlí jednoho člověka.“</em> Ve svém příspěvku zároveň odmítla interpretaci, podle níž by současné problémy vznikly až během jejího působení. Naopak tvrdí, že jde o důsledky dlouhodobě nastaveného systému, který byl léta přehlížen.</p>",
@@ -76,7 +76,7 @@ const siteData = {
         "<p>Do debaty se zapojil i <strong>MUDr. James Mason</strong>, bývalý ředitel ZZS. Jeho vyjádření však nelze číst zcela odděleně od skutečnosti, je totiž snoubencem bývalé ředitelky. Mason ve svém příspěvku situaci spíše mírnil a uvedl, že realita bývá složitější než jednoduché hledání jednoho viníka. Současně zdůraznil, že i přes spory ve vedení zůstávají zdravotníci v nemocnici i v terénu připraveni pomáhat pacientům.</p>",
 
         "<!-- ZDE VLOŽ OBRÁZEK 2 -->",
-        "<div style='margin: 20px 0; text-align: center;'><img src='obr2.jpg' alt='budova kongresu, San Fierro City Hall' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 2. budova kongresu, San Fierro City Hall</em></p></div>",
+        "<div style='margin: 20px 0; text-align: center;'><img src='Budova_Kongresu.jpeg' alt='budova kongresu, San Fierro City Hall' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 2. budova kongresu, San Fierro City Hall</em></p></div>",
 
         "<h3>Kongres hledá nové vedení</h3>",
         "<p>Nyní je situace v rukou Kongresu. Ten již vyhlásil výběrové řízení na pozici ředitele Zdravotnické záchranné služby. Zároveň připustil možnost prodloužení výběrového řízení v případě, že se nepřihlásí vhodný kandidát.</p>",
@@ -85,7 +85,7 @@ const siteData = {
         "<!-- PODPIS VPRAVO DOLE -->",
         "<p style='text-align: right; margin-top: 30px;'><em>Za <strong>Red County News</strong>, Natalia Walicki</em></p>"
       ],
-      image: "obr1.jpg"
+      image: "Budova_Nemocnice_Montgomery.png"
    }
   ],
 

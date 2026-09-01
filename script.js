@@ -24,7 +24,7 @@ const siteData = {
     {
       id: 3,
       date: "1. září 2026",
-      title: "Nejnovější článek — ukázkový nadpis",
+      title: "Test článek",
       description: "Toto je krátký popisek, který návštěvník uvidí v seznamu zpráv.",
       content: [
         "Toto je první odstavec celého článku. Sem napište samotný text zprávy, který se zobrazí po kliknutí na kartu.",

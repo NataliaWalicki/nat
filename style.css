@@ -259,7 +259,7 @@ button {
 
 .card-image-wrap {
   min-height: 160px;
-  background: var(--surface-2);
+  background: transparent;
 }
 
 .card-image {
@@ -280,7 +280,7 @@ button {
   min-height: 160px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+  background: var(--surface-2);
   color: var(--accent-strong);
   font-size: 2.5rem;
   font-weight: 900;
@@ -369,7 +369,7 @@ button {
 .latest-media {
   aspect-ratio: 16 / 6.2;
   min-height: 240px;
-  background: var(--surface-2);
+  background: transparent;
 }
 
 .latest-media img {
@@ -424,7 +424,7 @@ button {
 
 .about-image-wrap {
   min-height: 360px;
-  background: var(--surface-2);
+  background: transparent;
 }
 
 .about-image {
@@ -658,7 +658,7 @@ button {
   max-height: 610px;
   overflow: hidden;
   border-radius: 17px;
-  background: var(--surface-2);
+  background: transparent;
 }
 
 .detail-image {

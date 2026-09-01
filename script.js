@@ -109,7 +109,7 @@ const siteData = {
      Např.: "images/natalia.jpg"
   ========================================================== */
   profileImage:
-    "https://drive.google.com/file/d/1OtJuRvYgc2RxWO_d1HWeUUC4iFvYbC0p/view?usp=sharing"
+    <img src="NW3.png" alt="Mgr. Natalia Walicki" class="profile-img">
 };
 
 

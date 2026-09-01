@@ -46,7 +46,7 @@ const siteData = {
       image: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=85"
     },
 
-{
+    {
       id: 1,
       date: "10. března 2026",
       title: "ZZS bez vedení. Je to začátek změny, nebo začátek konce?",
@@ -166,9 +166,17 @@ function escapeHtml(value) {
 }
 
 
+// OPRAVA: Povolení HTML značek pro formátovaný obsah
 function escapeMultilineContent(content) {
   return content
-    .map(paragraph => `<p>${escapeHtml(paragraph)}</p>`)
+    .map(paragraph => {
+      // Pokud odstavec již obsahuje HTML značky (jako <p>, <h3>, <div>), vloží se přímo
+      if (paragraph.trim().startsWith("<")) {
+        return paragraph;
+      }
+      // Obyčejný text zabalíme do odstavce <p>
+      return `<p>${paragraph}</p>`;
+    })
     .join("");
 }
 
@@ -185,8 +193,6 @@ function getCollection(section) {
 
 /* ============================================================
    KARTA — ZPRÁVY / KONGRES
-   ------------------------------------------------------------
-   Celá karta je klikací. Neobsahuje žádný PDF download.
    ============================================================ */
 
 function contentCard(item, section) {

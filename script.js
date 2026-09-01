@@ -109,7 +109,7 @@ const siteData = {
      Např.: "images/natalia.jpg"
   ========================================================== */
   profileImage:
-    <img src="NW3.png" alt="Mgr. Natalia Walicki" class="profile-img">
+    "NW3.png"
 };
 
 

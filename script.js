@@ -52,6 +52,9 @@ const siteData = {
       title: "ZZS bez vedení. Je to začátek změny, nebo začátek konce?",
       description: "Kongres San Andreas oficiálně odvolal ředitelku ZZS MUDr. Leu Santiago na základě její rezignace. Co stojí za jejím odchodem a ostrou kritikou z řad bývalého vedení?",
       content: [
+        "<!-- ZDE VLOŽ LOGO (nahraď logo.png za název svého souboru) -->",
+        "<div style='text-align: center; margin-bottom: 25px;'><img src='logo.png' alt='Red County News Logo' style='max-width: 200px; height: auto;'></div>",
+
         "<p>San Andreas se v těchto dnech dívá na další citlivou změnu ve vedení jedné z klíčových organizací. Kongres San Andreas officially odvolal ředitelku Zdravotnické záchranné služby <strong>MUDr. Leu Santiago</strong>, a to na základě její vlastní rezignace ze dne 9. března 2026. Současně bylo vyhlášeno výběrové řízení na nového ředitele či ředitelku ZZS, které potrvá do 16. března 2026.</p>",
         "<p>Dočasným řízením organizace byl pověřen <strong>JUDr. Ing. Carl Schmitz, CSc.</strong>, který má zajistit běžný chod služby do doby, než bude jmenováno nové vedení.</p>",
         
@@ -77,11 +80,13 @@ const siteData = {
 
         "<h3>Kongres hledá nové vedení</h3>",
         "<p>Nyní je situace v rukou Kongresu. Ten již vyhlásil výběrové řízení na pozici ředitele Zdravotnické záchranné služby. Zároveň připustil možnost prodloužení výběrového řízení v případě, že se nepřihlásí vhodný kandidát.</p>",
-        "<p>Právě to bude v následujících dnech klíčové. Zdravotnická záchranná služba je jednou z nejdůležitějších institucí a dlouhodobé vakuum ve vedení by bylo pro její stabilitu rizikem. Na druhou stranu je zjevné, že nový ředitel nebo ředitelka nebude přebírat klidnou a jednotnou organizaci, ale sbor, kolem jehož vnitřního fungování se již teď vede otevřený spor.</p>"
+        "<p>Právě to bude v následujících dnech klíčové. Zdravotnická záchranná služba je jednou z nejdůležitějších institucí a dlouhodobé vakuum ve vedení by bylo pro její stabilitu rizikem. Na druhou stranu je zjevné, že nový ředitel nebo ředitelka nebude přebírat klidnou a jednotnou organizaci, ale sbor, kolem jehož vnitřního fungování se již teď vede otevřený spor.</p>",
+
+        "<!-- PODPIS VPRAVO DOLE -->",
+        "<p style='text-align: right; margin-top: 30px;'><em>Za <strong>Red County News</strong>, Natalia Walicki</em></p>"
       ],
       image: "obr1.jpg"
     }
-  ],
 
 
   /* ==========================================================

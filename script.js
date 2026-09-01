@@ -46,16 +46,40 @@ const siteData = {
       image: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=85"
     },
 
-    {
+{
       id: 1,
-      date: "20. srpna 2026",
-      title: "První zpráva — ukázkový nadpis",
-      description: "Starší zpráva pro demonstraci pořadí.",
+      date: "10. března 2026",
+      title: "ZZS bez vedení. Je to začátek změny, nebo začátek konce?",
+      description: "Kongres San Andreas oficiálně odvolal ředitelku ZZS MUDr. Leu Santiago na základě její rezignace. Co stojí za jejím odchodem a ostrou kritikou z řad bývalého vedení?",
       content: [
-        "Toto je ukázkový plný text starší zprávy.",
-        "Obsah si můžete kdykoliv přepsat přímo zde v tomto poli."
+        "<p>San Andreas se v těchto dnech dívá na další citlivou změnu ve vedení jedné z klíčových organizací. Kongres San Andreas officially odvolal ředitelku Zdravotnické záchranné služby <strong>MUDr. Leu Santiago</strong>, a to na základě její vlastní rezignace ze dne 9. března 2026. Současně bylo vyhlášeno výběrové řízení na nového ředitele či ředitelku ZZS, které potrvá do 16. března 2026.</p>",
+        "<p>Dočasným řízením organizace byl pověřen <strong>JUDr. Ing. Carl Schmitz, CSc.</strong>, který má zajistit běžný chod služby do doby, než bude jmenováno nové vedení.</p>",
+        
+        "<!-- ZDE VLOŽ OBRÁZEK 1 -->",
+        "<div style='margin: 20px 0; text-align: center;'><img src='obr1.jpg' alt='budova okresní nemocnice Montgomery' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 1. budova okresní nemocnice Montgomery</em></p></div>",
+
+        "<h3>Oficiální důvod je rezignace. Veřejná debata ale ukazuje hlubší problém</h3>",
+        "<p>Bývalá ředitelka svůj odchod vysvětlila slovy: <em>„Neodcházím proto, že by se Zdravotnická záchranná služba pod mým vedením rozpadala, jak se vám zde někteří účelově snaží podsouvat, ale proto, že jsem po měsících intenzivní práce dospěla k závěru, že současný vnitřní stav instituce je natolik zatuhlý, přebujelý a dlouhodobě zanedbaný, že jej v krátkém čase nelze napravit pouhou vůlí jednoho člověka.“</em> Ve svém příspěvku zároveň odmítla interpretaci, podle níž by současné problémy vznikly až během jejího působení. Naopak tvrdí, že jde o důsledky dlouhodobě nastaveného systému, který byl léta přehlížen.</p>",
+        "<p>Současně zdůraznila i to, že se během jejího působení podařilo otevřít témata, která byla dlouhodobě odsouvána. Jak sama uvedla: <em>„Za dobu mého působení se naopak podařilo znovu nastartovat zájem o práci v ZZS, zvýšit počet přihlášek a otevřít témata, která byla dlouhé měsíce a roky zametána pod koberec. Personální krize ani provozní problémy nevznikly 2.12.2025 a rozhodně nejsou výsledkem několika týdnů mého vedení. Jsou důsledkem systému, který se zde budoval dlouhodobě a který byl mnohými obhajován až do chvíle, kdy se na něj konečně začalo sahat.“</em></p>",
+
+        "<h3>Ostrá kritika od bývalého zástupce</h3>",
+        "<p>Zcela opačný pohled na situaci veřejně prezentoval bývalý zástupce ředitelky <strong>Richard William Morgan, M.D., MBA</strong>, který na svou funkci rezignoval ještě před samotným odchodem Santiago. Svou kritiku shrnul poměrně ostře: <em>„Důvodem je neudržitelný styl vedení, nečinnost a pasivita paní ředitelky. Instituce, která má být pilířem bezpečnosti našeho státu, je paralyzována vedením, které od svého jmenování dne 2.12.2025 neřeší reálné problémy. Místo personální krize v první linii a obecně klesajícímu zájmu o práci v ZZS se paní ředitelka měsíce věnuje pouze administrativním margináliím, jako jsou názvy hodností a i ty zůstaly dodnes nedotažené.“</em></p>",
+        "<p>Morgan rovněž zpochybnil veřejně prezentované informace o stabilizaci a zvýšeném zájmu o práci v ZZS. Podle něj data ukazovala spíše nerovnoměrné zatížení, kdy velkou část práce táhl omezený počet lidí, zatímco zbytek organizace stagnoval.</p>",
+        "<p>Veřejně se také pozastavil nad tím, že ani po několika měsících nebyly dotaženy některé vnitřní organizační změny, včetně úprav hodnostního systému. Jeho kritika byla formulována tvrdě a osobně, což následně vyvolalo další reakce.</p>",
+
+        "<h3>Veřejnost i kolegové kritizovali hlavně formu sporu</h3>",
+        "<p>Ačkoli si vyjádření obou stran získala pozornost, významná část reakcí veřejnosti i lidí z okolí státní správy směřovala spíše proti formě celé hádky než k samotnému obsahu. Pod příspěvky se objevovala kritika, že veřejné přestřelky mezi bývalým vedením ZZS působí nedůstojně a spíše připomínají osobní spor než profesionální debatu.</p>",
+        "<p>Někteří komentující vyjadřovali zklamání nad tím, že se vysoce postavení členové zdravotnické služby přou na sociální síti místo toho, aby spor řešili interně. Jiní naopak upozorňovali, že i nepříjemná kritika může být legitimní, pokud poukazuje na skutečné problémy uvnitř organizace.</p>",
+        "<p>Do debaty se zapojil i <strong>MUDr. James Mason</strong>, bývalý ředitel ZZS. Jeho vyjádření však nelze číst zcela odděleně od skutečnosti, je totiž snoubencem bývalé ředitelky. Mason ve svém příspěvku situaci spíše mírnil a uvedl, že realita bývá složitější než jednoduché hledání jednoho viníka. Současně zdůraznil, že i přes spory ve vedení zůstávají zdravotníci v nemocnici i v terénu připraveni pomáhat pacientům.</p>",
+
+        "<!-- ZDE VLOŽ OBRÁZEK 2 -->",
+        "<div style='margin: 20px 0; text-align: center;'><img src='obr2.jpg' alt='budova kongresu, San Fierro City Hall' style='max-width: 100%; height: auto; border-radius: 12px;'><p style='font-size: 0.85rem; color: var(--text-soft); margin-top: 5px;'><em>obr. 2. budova kongresu, San Fierro City Hall</em></p></div>",
+
+        "<h3>Kongres hledá nové vedení</h3>",
+        "<p>Nyní je situace v rukou Kongresu. Ten již vyhlásil výběrové řízení na pozici ředitele Zdravotnické záchranné služby. Zároveň připustil možnost prodloužení výběrového řízení v případě, že se nepřihlásí vhodný kandidát.</p>",
+        "<p>Právě to bude v následujících dnech klíčové. Zdravotnická záchranná služba je jednou z nejdůležitějších institucí a dlouhodobé vakuum ve vedení by bylo pro její stabilitu rizikem. Na druhou stranu je zjevné, že nový ředitel nebo ředitelka nebude přebírat klidnou a jednotnou organizaci, ale sbor, kolem jehož vnitřního fungování se již teď vede otevřený spor.</p>"
       ],
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=85"
+      image: "obr1.jpg"
     }
   ],
 

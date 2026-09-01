@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nat.ic — informační web Mgr. Natalia Walicki.">
+  <meta name="theme-color" content="#8bca84">
+  <title>Vaše Nat! | Nat.ic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="Vaše Nat! — úvodní stránka">Vaše Nat!</a>
+
+        <div class="header-actions">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Přepnout barevný režim" aria-pressed="false">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+            <span id="themeLabel">Tmavý režim</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Hlavní navigace">
+        <div class="nav-inner">
+          <button class="nav-button active" type="button" data-page="home">Nejnovější článek</button>
+          <button class="nav-button" type="button" data-page="news">Zprávy</button>
+          <button class="nav-button" type="button" data-page="congress">Kongres</button>
+          <button class="nav-button" type="button" data-page="about">O mně</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- ============================== -->
+      <!-- DOMOV / NEJNOVĚJŠÍ ČLÁNEK      -->
+      <!-- ============================== -->
+      <section id="page-home" class="page active-page" aria-labelledby="homeTitle">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Nat.ic</p>
+            <h1 id="homeTitle">Nejnovější článek</h1>
+          </div>
+          <span class="page-badge">Aktuální</span>
+        </div>
+
+        <div id="latestArticleContainer"></div>
+
+        <div class="notice-card">
+          <p>„Tento web je spravovaný Mgr. Natalia Walicki a slouží jako informační prostředek pro mé potřeby.“</p>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- ZPRÁVY                         -->
+      <!-- ============================== -->
+      <section id="page-news" class="page" aria-labelledby="newsTitle" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Informační sekce</p>
+            <h1 id="newsTitle">Zprávy</h1>
+          </div>
+          <span id="newsCount" class="page-badge"></span>
+        </div>
+
+        <div id="newsList" class="card-list"></div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- KONGRES                        -->
+      <!-- ============================== -->
+      <section id="page-congress" class="page" aria-labelledby="congressTitle" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Legislativa a hlasování</p>
+            <h1 id="congressTitle">Kongres</h1>
+          </div>
+          <span id="congressCount" class="page-badge"></span>
+        </div>
+
+        <div id="congressList" class="card-list"></div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- O MNĚ                          -->
+      <!-- ============================== -->
+      <section id="page-about" class="page" aria-labelledby="aboutTitle" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Profil</p>
+            <h1 id="aboutTitle">O mně</h1>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-image-wrap">
+            <img id="aboutImage" src="" alt="Profilový obrázek Mgr. Natalia Walicki" class="about-image">
+            <div id="aboutImageFallback" class="image-fallback" aria-hidden="true">NW</div>
+          </div>
+
+          <div class="about-content">
+            <p class="eyebrow">Mgr. Natalia Walicki</p>
+            <h2>Informace o Mgr. Natalia Walicki.</h2>
+            <p class="about-text">
+              Tato sekce je připravena pro profil, stručné představení,
+              profesní informace nebo další veřejně dostupné údaje.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- DETAIL ČLÁNKU                  -->
+      <!-- ============================== -->
+      <section id="page-detail" class="page" aria-labelledby="detailTitle" hidden>
+        <div id="detailContainer"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Vaše Nat!</div>
+          <p class="footer-muted">Nat.ic · Informační web</p>
+        </div>
+
+        <div class="footer-contact">
+          <p><strong>Kontakt:</strong> Mgr. Natalia Walicki</p>
+          <p><strong>post:</strong> natalia.walicki@post.ic</p>
+          <p><strong>tel.:</strong> 630-980</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
